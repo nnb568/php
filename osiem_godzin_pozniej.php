@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Aktualna godzina</h3>
-    
+    <h3 style="color: tomato;">Aktualna godzina</h3>
+    <p><?= date('H:i:s', strtotime('now')) ?></p>
+    <h3 style="color: navy;">Osiem godzin poźniej</h3>
+    <p><?= date('H:i:s', strtotime('+8 hours')) ?></p>
 </body>
 </html>
