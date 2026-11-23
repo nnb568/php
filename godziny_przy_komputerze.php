@@ -10,12 +10,13 @@
         width: 100%;
     }
     th, td{
-        border: medium solid black ;
-        background-color: #e4db8d;
-        color: red;
+        border: medium double black ;
         padding: 10px;
     }
-    
+    time{
+        box-shadow: 0px 0px 5px red;
+        font-family: 'courier';
+    }
 
     </style>
 </head>
@@ -38,19 +39,19 @@
  ?>
  <table>
      <tr>
-        <td></td>
+        <td style="border-top: none; border-left: none;"></td>
          <th>Poniedziałek</th><th>Wtorek</th><th>Środa</th>
          <th>Czwartek</th><th>Piątek</th><th>Sobota</th><th>Niedziela</th>
      </tr>
      <tr>
         <td>godziny przy komputerze</td>
-        <td><?php echo $poniedzialek_od; ?> - <?php echo $poniedzialek_do; ?></td>
-        <td><?php echo $wtorek_od; ?> - <?php echo $wtorek_do; ?></td>
-        <td><?php echo $sroda_od; ?> - <?php echo $sroda_do; ?></td>
-        <td><?php echo $czwartek_od; ?> - <?php echo $czwartek_do; ?></td>
-        <td><?php echo $piatek_od; ?> - <?php echo $piatek_do; ?></td>
-        <td><?php echo $sobota_od; ?> - <?php echo $sobota_do; ?></td>
-        <td><?php echo $niedziela_od; ?> - <?php echo $niedziela_do; ?></td>
+        <td>od <time><?php echo $poniedzialek_od; ?></time> do <time><?php echo $poniedzialek_do; ?></time></td>
+        <td>od <time><?php echo $wtorek_od; ?></time> do <time><?php echo $wtorek_do; ?></time></td>
+        <td>od <time><?php echo $sroda_od; ?></time> do <time><?php echo $sroda_do; ?></time></td>
+        <td>od <time><?php echo $czwartek_od; ?></time> do <time><?php echo $czwartek_do; ?></time></td>
+        <td>od <time><?php echo $piatek_od; ?></time> do <time><?php echo $piatek_do; ?></time></td>
+        <td>od <time><?php echo $sobota_od; ?></time> do <time><?php echo $sobota_do; ?></time></td>
+        <td>od <time><?php echo $niedziela_od; ?></time> do <time><?php echo $niedziela_do; ?></time></td>
      </tr>
  </table>
 </body>
