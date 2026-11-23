@@ -1,0 +1,16 @@
+ <?php
+    $poniedzialek_od = '12:00';
+    $poniedzialek_do = '23:55';
+    $wtorek_od = '8:05';
+    $wtorek_do = '10:15';
+    $sroda_od = '6:45';
+    $sroda_do = '11:25';
+    $czwartek_od = '9:55';
+    $czwartek_do = '10:35';
+    $piatek_od = '13:50';
+    $piatek_do = '16:10';
+    $sobota_od = '20:05';
+    $sobota_do = '22:35';
+    $niedziela_od = '16:00';
+    $niedziela_do = '18:50';
+ ?>
