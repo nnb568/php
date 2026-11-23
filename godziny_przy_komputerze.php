@@ -8,6 +8,7 @@
         border-collapse: collapse;
         font-family: Arial;
         width: 100%;
+        table-layout: fixed;
     }
     th, td{
         border: medium double black ;
@@ -19,7 +20,7 @@
         font-weight: bold;
     }
     strong{
-        color: lightskyblue;
+        background-color: lightskyblue;
         border-radius: 5px;
         padding: 2px;
     }
@@ -42,7 +43,22 @@
     $sobota_do = '22:35';
     $niedziela_od = '16:00';
     $niedziela_do = '18:50';
- ?>
+    $poniedzialek_roznica = date_diff(date_create($poniedzialek_od), date_create($poniedzialek_do));
+    $wtorek_roznica = date_diff(date_create($wtorek_od), date_create($wtorek_do));
+    $sroda_roznica = date_diff(date_create($sroda_od), date_create($sroda_do));
+    $czwartek_roznica = date_diff(date_create($czwartek_od), date_create($czwartek_do));
+    $piatek_roznica = date_diff(date_create($piatek_od), date_create($piatek_do));
+    $sobota_roznica = date_diff(date_create($sobota_od), date_create($sobota_do));
+    $niedziela_roznica = date_diff(date_create($niedziela_od), date_create($niedziela_do));
+    $niedziela_minuty = $niedziela_roznica->h * 60 + $niedziela_roznica->i ;
+    $sobota_minuty = $sobota_roznica->h * 60 + $sobota_roznica->i ;
+    $piatek_minuty = $piatek_roznica->h * 60 + $piatek_roznica->i ;
+    $czwartek_minuty = $czwartek_roznica->h * 60 + $czwartek_roznica->i ;
+    $sroda_minuty = $sroda_roznica->h * 60 + $sroda_roznica->i ;
+    $wtorek_minuty = $wtorek_roznica->h * 60 + $wtorek_roznica->i ;
+    $poniedzialek_minuty = $poniedzialek_roznica->h * 60 + $poniedzialek_roznica->i ;
+    $wszystkie_minuty = $poniedzialek_minuty + $wtorek_minuty + $sroda_minuty + $czwartek_minuty + $piatek_minuty + $sobota_minuty + $niedziela_minuty;
+    ?>
  <table>
      <tr>
         <td style="border-top: none; border-left: none;"></td>
@@ -58,6 +74,20 @@
         <td><time><?php echo $piatek_od; ?></time> do <time><?php echo $piatek_do; ?></time></td>
         <td><time><?php echo $sobota_od; ?></time> do <time><?php echo $sobota_do; ?></time></td>
         <td><time><?php echo $niedziela_od; ?></time> do <time><?php echo $niedziela_do; ?></time></td>
+     </tr>
+     <tr>
+        <td>Różnica h:m <strong>minuty</strong></td>
+        <td><time><?= $poniedzialek_roznica->format('%h:%i') ?></time> <strong><?=$poniedzialek_minuty?></strong></td>
+        <td><time><?= $wtorek_roznica->format('%h:%i') ?></time> <strong><?=$wtorek_minuty?></strong></td>
+        <td><time><?= $sroda_roznica->format('%h:%i') ?></time> <strong><?=$sroda_minuty?></strong></td>
+        <td><time><?= $czwartek_roznica->format('%h:%i') ?></time> <strong><?=$czwartek_minuty?></strong></td>
+        <td><time><?= $piatek_roznica->format('%h:%i') ?></time> <strong><?=$piatek_minuty?></strong></td>
+        <td><time><?= $sobota_roznica->format('%h:%i') ?></time> <strong><?=$sobota_minuty?></strong></td>
+        <td><time><?= $niedziela_roznica->format('%h:%i') ?></time> <strong><?=$niedziela_minuty?></strong></td>
+     </tr>
+     <tr>
+        <td style="border-bottom:none ; border-left: none;"></td>
+        <td colspan="7">Suma: <time><?=$wszystkie_minuty/60 ?></time> <strong><?= $wszystkie_minuty ?></strong></td>
      </tr>
  </table>
 </body>
