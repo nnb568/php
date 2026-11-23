@@ -21,7 +21,7 @@
         <p>Wynajem od: <b><?=$format_start_data?></b> do: <b><?=$format_end_data?></b></p>
         <p>Liczba dni najmu: <b><?=$durance?></b></p>
         <p>Cena najmu: <b><?=$price?></b>zł (netto/dzień)</p>
-        <p>Całkowity koszt najmu: <b><?=$cost?></b>zł (bruto) [VAT = 23%]</p>
+        <p>Całkowity koszt najmu: <b><?=str_replace('.', ',', $cost)?></b>zł (bruto) [VAT = 23%]</p>
     </div>
 
 </body>
