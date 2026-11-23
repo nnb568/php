@@ -87,7 +87,7 @@
      </tr>
      <tr>
         <td style="border-bottom:none ; border-left: none;"></td>
-        <td colspan="7">Suma: <time><?=$wszystkie_minuty/60 ?></time> <strong><?= $wszystkie_minuty ?></strong></td>
+        <td colspan="7" align="center">Suma: <time><?=floor($wszystkie_minuty/60)?>:<?=str_pad($wszystkie_minuty%60, 2, '0', STR_PAD_LEFT); ?></time> <strong><?= $wszystkie_minuty ?></strong></td>
      </tr>
  </table>
 </body>
