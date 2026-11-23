@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <php $start_data = data_create
+    <php $start_data = data_create('21.01.2027')
 </body>
 </html>
